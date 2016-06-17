@@ -1,0 +1,13 @@
+= render layout: 'users/layout', locals: {user: @presenter.user} do
+  .row
+    .col.col-8.col-push-1.user_content
+      .h2
+        | Последняя активность
+      .band.band__activity
+        .band_item.band_item__last
+          .band_item_date
+            .text.text__important
+              = smart_date(@presenter.user.created_at, style: :full, month: :short)
+          .band_item_content
+            .user_activity
+              | Ура! Вы зарегистрировались на Family Boom

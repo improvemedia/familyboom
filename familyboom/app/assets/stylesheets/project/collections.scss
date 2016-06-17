@@ -1,0 +1,15 @@
+@import "project/collections.core";
+
+.collection-add-btn {
+  @include p(a,113px,0,'',0);
+  font-weight: 700;
+  text-align: center;
+  color: $text-color;
+
+  &:before {
+    @include icon(collection-add, b);
+    position: relative;
+    left: 5px;
+    margin: 0 auto 13px;
+  }
+}

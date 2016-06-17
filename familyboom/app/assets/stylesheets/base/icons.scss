@@ -1,0 +1,29 @@
+.icon {
+  display: inline-block;
+}
+
+.icon {
+  &__health,
+  .section__zdorove & {
+    @include icon(health);
+  }
+
+  &__food,
+  .section__pitanie & {
+    @include icon(food);
+  }
+
+  &__beauty,
+  .section__krasota & {
+    @include icon(beauty);
+  }
+
+  &__baby,
+  .section__ukhod-za-rebenkom & {
+    @include icon(baby);
+  }
+}
+
+.icon-settings {
+  @include icon(settings)
+}

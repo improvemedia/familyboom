@@ -1,0 +1,47 @@
+= render 'posts/show/meta'
+
+= render 'shared/page_styles', styles: bg_helper(@post)
+
+= render 'shared/gtm_datalayer', vars: @post.decorate.datalayer_vars
+
+= cache_with_after_condition true, [@post, 'content', current_user.try(:role).try(:name)], unless: @post_preview, expires_in: 1.hour do
+
+  .article.article-show.content class=post_classes(@post) data-post-id=@post.id
+    = render 'posts/show/promo_head', promo_project: @promo_project
+
+    = javascript_tag defer: :defer, type: "text/javascript" do
+      | window.editor_params = JSON.parse('#{ raw j @post.editor_params }')
+
+    = render 'posts/show/teaser', show_autor: true, show_banner: true
+
+    .article-main.container
+      = render 'shared/page_side', object: @post
+
+      - if @post.d.first_part_content?
+        .article-main-part
+          = @post.d.first_part_content
+
+      - if @post.d.banner_in_body?
+        .article-aside
+          = render 'posts/show/banner'
+
+      .article-main-full
+        .article_content
+          = @post.d.full_content
+
+        = render 'posts/show/promo_logo', promo_project: @promo_project
+        = render 'posts/show/share_block'
+        = render 'shared/like_fb_page', url: 'https://www.facebook.com/familyboom.ru'
+        .tags
+          = render_post_tags(@post, cls: 'btn btn__pillow tag')
+
+        = render 'the_comments/tree', commentable: @post, comments_tree: @comments, cls: 'article_comments'
+
+      .posts-last@more-block
+        .h2-real.posts-last_title Еще обсуждают
+        @more-items
+          = render_post @most_interesting[0..1], size: :l, cls: 'col col-6', wrapper: { cls: 'row posts-last_row' }
+          = render_post @most_interesting[2..4], size: :m, cls: 'col col-4', wrapper: { cls: 'row posts-last_row' }
+
+        - unless @most_interesting.last_page?
+          .btn.btn__size_l.btn__block@more-btn data-url=more_posts_path(page: 2, per: 5) Показать еще

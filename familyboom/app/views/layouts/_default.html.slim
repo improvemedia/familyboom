@@ -1,0 +1,8 @@
+= render 'layouts/topbanner', cls: "topbanner-position-#{ topbanner_position }" if topbanner_position
+
+= render 'layouts/header'
+
+#main
+  = yield
+
+= render 'layouts/footer'

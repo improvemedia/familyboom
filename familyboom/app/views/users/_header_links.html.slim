@@ -1,0 +1,6 @@
+- its_me  = current_user && current_user == user
+- if its_me
+  = render 'my/profiles/header_links'
+- else
+  = render 'users/user_header_links', user: user, its_me: its_me
+

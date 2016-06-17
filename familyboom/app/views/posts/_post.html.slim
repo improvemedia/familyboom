@@ -1,0 +1,25 @@
+- cls ||= ''
+- cls << " post-preview__size_#{size}"
+- cls << ' preview__state_draft' if post.draft?
+- manage_links_enable ||= true
+- counters_enable = false
+
+- path = slug_url(post)
+
+a.post-preview class=cls href=path
+  .post-preview_pic
+    img src=post.teaser.url(size)
+    .post-preview_data
+      .post-preview_counters
+        = render 'posts/counters', post: post, cls: 'counter__inverse'
+  .post-preview_content
+    - unless size == :s
+      - tag = post.tag_main_categories.first
+      - if tag
+        .post-preview_tag = post.tag_main_categories.first.name
+    .post-preview_date = smart_date(post.publish_at || post.updated_at)
+    .post-preview_title = post.title
+    - if ![:l, :xl, :s].include?(size) && post.announce.present?
+      .post-preview_descr
+        = post.announce
+

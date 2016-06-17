@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: *search
+Disallow: *referer=
+Disallow: *registration
+Disallow: *?
+Disallow: /photos
+Sitemap: http://familyboom.ru/sitemap/sitemap.xml
+
+User-agent: Yandex
+Disallow: *search
+Disallow: *referer=
+Disallow: *registration
+Disallow: *?
+Disallow: /photos
+Crawl-Delay: 0.3
+Host: familyboom.ru
+Sitemap: http://familyboom.ru/sitemap/sitemap.xml

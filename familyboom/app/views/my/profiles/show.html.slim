@@ -1,0 +1,172 @@
+- @user = UserDecorator.new(current_user)
+
+= render layout: 'users/layout', locals: { aside_html: render('my/profiles/nav') } do
+  @user_profile_form
+    = form_for(current_user, multiple: true, remote: true, data: { type: 'json' }) do |f|
+      .h4.user_settings_title Личная информация
+      .user-avatar-settings.row
+        .avatar.avatar__size_l.col.col-2
+          img%%avatar src=@user.avatar.url(:large)
+
+        .col.col-4%%avatarUploader data-options={ uploadUrl: avatar_path, cropUrl: crop_avatar_path }.to_json
+          .user-avatar-settings_label
+            | Выберите файл c вашей фотографией
+            br
+            | размером не более 1 Мб
+          .row
+            .col.col-2
+              .btn.btn__primary.btn-file
+                | Загрузить
+                input.js-avatarUploaderInput name='avatar' type='file'
+
+            .col.col-2
+              .btn.btn__danger.js-avatarUploaderDelete Удалить
+
+      .row
+        .col.col-4
+          .form-group@inline_error_first_name
+            label.label
+              | Имя
+            - placeholder = current_user.company? ? 'Название компании' : 'Имя'
+            = f.text_field :first_name, class: 'form-control', placeholder: placeholder, data: { block: 'input' }
+
+        - unless current_user.company?
+          .col.col-4
+            .form-group@inline_error_last_name
+              label.label
+                | Фамилия
+              = f.text_field :last_name,  class: 'form-control', data: { block: 'input' }
+
+      - unless current_user.company?
+        .row
+          .col.col-4
+            .form-group
+              label.label
+                | Пол
+              = f.select :gender, [['Женский', false], ['Мужской', true]], {}, class: 'form-control', data: { block: 'select' }, placeholder: 'Выберите ваш пол'
+
+          .col.col-4
+            .form-group
+              label.label
+                | Дата рождения
+              - end_year = Time.now.year - 18
+              .select-group-date
+                = f.date_select :birthday, { start_year: 1930, end_year: end_year, default: Time.local(end_year, 'Jan', 1),  with_css_classes: true }, class: 'form-control'
+
+      .row
+        .col.col-8
+          .form-group
+            label.label
+              | Информация о вас
+            = f.text_area :description, class: 'form-control', data: { block: 'input' }
+      .row
+        .col.col-4
+          .form-group
+            label.label
+              | Страна
+            = user_country_autocomplete(class: 'form-control')
+        .col.col-4
+          .form-group@inline_error_country_city
+            label.label
+              | Город
+            = user_city_autocomplete(class: 'form-control')
+
+      - if current_user.company?
+        - if current_user.company?
+          .h4.user_settings_title Информация о компании
+          .row
+            .col.col-4
+              label.label Cпециализация компании
+              .form-group
+                = f.collection_select :company_type_id, CompanyType.all, :id, :title
+      - else
+        .h4.user_settings_title Тип пользователя
+        .row@user_std_pro_type_selector@inline_error_user_profession
+          .col.col-4
+            .form-group
+              label.label
+                | Категория
+              = f.select :user_type, [['Стандартный', :user], ['Профессионал', :pro]], { selected: current_user.user_type }, data: { role: :user_type_select }, class: 'form-control'
+          .col.col-4
+            .form-group
+              label.label
+                | Специальность
+              = render 'users/user_profession', f: f, user: current_user, cls: 'form-control'
+
+      .h4.user_settings_title Контактная информация
+      .row
+        .col.col-4
+          .form-group
+            label.label
+              | Сайт
+            .form-icon.form-icon__site
+              = f.text_field :site, class: 'form-control', data: { block: 'input' }
+      .row
+        .col.col-4
+          .form-group
+            label.label
+              | Почта
+            .form-icon.form-icon__email@inline_error_email
+              = f.text_field :email, class: 'form-control', data: { block: 'input' }
+      .row
+        .col.col-4
+          .form-group
+            label.label
+              | Телефон
+            .form-icon.form-icon__phone@inline_error_phone
+              = f.text_field :phone, class: 'form-control', data: { block: 'input' }
+      .row
+        .col.col-4
+          .form-group
+            label.label
+              | Сссылка Vkontakte
+            .form-icon.form-icon__vk@inline_error_vkontakte
+              = f.text_field :vkontakte, class: 'form-control', data: { block: 'input' }
+      .row
+        .col.col-4
+          .form-group
+            label.label
+              | Ссылка Facebook
+            .form-icon.form-icon__fb@inline_error_facebook
+              = f.text_field :facebook,  class: 'form-control', data: { block: 'input' }
+      .row
+        .col.col-4
+          .form-group
+            label.label
+              | Ссылка Twitter
+            .form-icon.form-icon__tw@inline_error_twitter
+              = f.text_field :twitter,   class: 'form-control', data: { block: 'input' }
+
+      .h4.user_settings_title Адрес вашего профиля
+
+      .row
+        .col.col-4
+          .form-group
+            label.label http://familyboom.ru/users/
+            = f.text_field :slug, class: 'form-control', placeholder: 'Адрес вашего профиля'
+            small допустимые символы: латинские буквы, цифры, символы подчеркивания и дефис
+
+
+      .h4.user_settings_title Прочее
+      .row
+        - unless current_user.user?
+          .col.col-4
+            .form-group
+              = f.text_field :address, class: 'form-control', placeholder: 'Адрес', data: { role: 'yandex-decode-me-plz' }
+              = hidden_field_tag 'user[address_coords][lat]', '', data: { role: 'map-lat' }
+              = hidden_field_tag 'user[address_coords][lng]', '', data: { role: 'map-lng' }
+
+      .row
+        .col.col-4
+          .form-group
+            .checkbox
+              = f.check_box :show_email, class: 'form-control'
+              = f.label :show_email, 'Показывать email в профиле'
+
+          .form-group
+            .checkbox
+              = f.check_box :receive_notifications, class: 'form-control'
+              = f.label :receive_notifications, 'Получать уведомления'
+
+      .form-group
+        = f.button 'Сохранить', class: 'btn btn__primary'

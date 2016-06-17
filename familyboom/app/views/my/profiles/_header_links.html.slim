@@ -1,0 +1,23 @@
+.nav-horiz.user_nav
+  .nav-horiz_item class=("#{'active' if current_page?(user_path(current_user))}")
+    a.nav-horiz_link(href=user_path(current_user)) Главная
+
+  .nav-horiz_item class="#{'active' if current_page?(my_posts_path)}"
+    = link_to "Статьи", my_posts_path, class: 'nav-horiz_link'
+
+  .nav-horiz_item class="#{'active' if current_page?(my_reports_path)}"
+    = link_to "Новости", my_reports_path, class: 'nav-horiz_link'
+
+  .nav-horiz_item class="#{'active' if @resource_class.to_s == 'Collection'}"
+    = link_to "Избранное", user_collections_path(current_user), class: 'nav-horiz_link'
+
+  - if current_user.try(:pro_or_company?) && (user_resources_length(current_user, :portfolios) > 0)
+    .nav-horiz_item class="#{'active' if @resource_class.to_s == 'Portfolio'}"
+      = link_to "Портфолио", user_portfolios_path(current_user), class: 'nav-horiz_link'
+
+  .nav-horiz_item class=('active' if current_page?(my_notifications_path))
+    = link_to 'Уведомления', my_notifications_path, class: 'nav-horiz_link'
+
+  .nav-horiz_item class=('active' if current_page?(my_profile_path))
+    = link_to my_profile_path, class: 'nav-horiz_link' do
+      .icon-settings

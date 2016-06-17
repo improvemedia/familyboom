@@ -1,0 +1,41 @@
+.error-page {
+  padding-top: 37px;
+
+  .nav-vertical_link:not(:hover) {
+    color: #2d437b;
+  }
+}
+
+.error-page_btn {
+  display: block;
+  width: 300px;
+  margin: 0 auto 40px;
+  font-size: 12px;
+}
+
+.error-page_logo {
+  @include icon(error-page-logo, b);
+  position: relative;
+  left: 10px;
+  margin: 0 auto 50px;
+}
+
+.error-page_baby {
+  @include icon(baby-giant, b);
+  margin: 0 auto 50px;
+}
+
+.error-page_title {
+  margin: 0 0 3px;
+  font-size: 60px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: center;
+}
+
+.error-page_description {
+  margin: 0 0 50px;
+  font-size: 23px;
+  font-weight: 500;
+  text-align: center;
+}

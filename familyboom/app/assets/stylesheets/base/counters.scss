@@ -1,0 +1,59 @@
+.counter {
+  display: inline-block;
+  line-height: 1;
+
+  &:before {
+    margin-right: 5px;
+    vertical-align: top;
+  }
+}
+
+.counter:not(.counter__inverse) {
+  &.counter__visits {
+    &:before {
+      @include icon(watch-dark);
+    }
+  }
+
+  &.counter__comments {
+    margin-left: 19px;
+
+    &:before {
+      @include icon(comments-dark);
+    }
+  }
+
+  &.counter__date {
+    margin-left: 17px;
+    text-transform: uppercase;
+
+    &:before {
+      @include icon(date-dark);
+      margin: -1px 5px 0 0;
+    }
+  }
+}
+
+.counter__inverse {
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+
+  &.counter__visits {
+    &:before {
+      @include icon(watch);
+    }
+  }
+
+  &.counter__comments  {
+    &:before {
+      @include icon(comments);
+    }
+  }
+
+  &.counter__fav {
+    &:before {
+      @include icon(fav);
+    }
+  }
+}

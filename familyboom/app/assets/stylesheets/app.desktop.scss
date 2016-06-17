@@ -1,0 +1,114 @@
+@import 'icons.desktop';
+@import 'fonts';
+@import 'variables';
+@import 'jarvis.desktop';
+
+$font-size: 12px;
+$transition-time: .3s;
+$section-border-style: 1px solid #e8e8e8;
+
+/* Base
+======================================================================= */
+
+@import 'base/base';
+@import 'base/typography';
+@import 'base/btn';
+@import 'base/forms';
+@import 'base/counters';
+@import 'base/icons';
+@import 'base/list';
+@import 'base/section';
+
+/* Components
+======================================================================= */
+
+@import 'components/nav';
+@import 'components/nav-horiz';
+@import 'components/subnav';
+@import 'components/next-nav';
+@import 'components/range-nav';
+@import 'components/menu';
+
+@import 'components/article';
+@import 'components/more-news';
+@import 'components/form-params';
+@import 'components/band.core';
+@import 'components/page-side';
+@import 'components/teaser';
+@import 'components/gallery';
+@import 'components/select-group-date';
+@import 'components/text';
+@import 'components/comments';
+@import 'components/comment-form';
+@import 'components/banner';
+@import 'components/overlay';
+@import 'components/modal.core';
+@import 'components/modal.theme';
+@import 'components/modal-fp';
+@import 'components/add-to-collection-form';
+@import 'components/ui-datepicker';
+@import 'components/toast';
+@import 'components/editor-tags';
+@import 'components/like-fb-page.core';
+@import 'components/user-type';
+@import 'components/avatar';
+@import 'components/pagination';
+@import 'components/shares';
+@import 'components/tags';
+@import 'components/search-field';
+@import 'components/search.core';
+@import 'components/preview-list.core';
+@import 'components/manage-links.core';
+@import 'components/attach-photos.core';
+@import 'components/header';
+// @import 'components/header';
+@import 'components/footer';
+@import 'components/select2';
+
+
+/* Project
+======================================================================= */
+
+@import 'project/discuss-new';
+@import 'project/user';
+@import 'project/login';
+@import 'project/error-page';
+@import 'project/collections';
+
+@import 'project/topics/topic-index';
+@import 'project/topics/topic-preview';
+@import 'project/topics/topics-feed';
+@import 'project/topics/topics-last';
+
+@import 'project/posts/post-preview';
+@import 'project/posts/posts-index';
+@import 'project/posts/posts';
+
+@import 'project/reports/report-preview';
+@import 'project/reports/reports-index';
+@import 'project/reports/reports';
+
+/* asdjkfhaskdjfhg - всякая дрянь
+======================================================================= */
+
+.to-right {
+  text-align: right;
+}
+
+.upcs {
+  text-transform: uppercase;
+}
+
+.mark {
+  color: #fc98a8;
+}
+
+.publication_modal_content .select2-container {
+  width: 80px;
+  border: 1px solid #B2B2B2;
+  border-radius: 3px;
+}
+
+.modal-backdrop {
+  background: rgba(37,24,18,0.3);
+}

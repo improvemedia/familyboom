@@ -1,0 +1,28 @@
+.shares {
+  padding: 20px 0;
+  border-top: 1px dashed #b8c0d2;
+  border-bottom: 1px dashed #b8c0d2;
+  text-align: justify;
+
+  &:after {
+    width: 100%;
+    content: '';
+  }
+}
+
+.shares_action {
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+.shares_title {
+  margin: -4px 0 15px;
+  color: #2d437b;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  & + .btn {
+    margin-left: 0 !important;
+  }
+}

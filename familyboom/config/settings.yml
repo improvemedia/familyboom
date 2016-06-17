@@ -1,0 +1,36 @@
+---
+app_name:  familyboom
+site_name: FamilyBoom.ru
+site_title: FamilyBoom
+domain_name: familyboom.ru
+utm_source:  familyboom
+greetings_email: noreply@familyboom.ru
+asset_host: http://assets.familyboom.ru
+
+
+JS_BUGSNAG_KEY: 8362b64312d337a92be859e82a49d05f
+
+FACEBOOK_KEY: 503333703141231
+FACEBOOK_SECRET: f7e2091e5072afd22aea279b02e8b723
+FACEBOOK_ADMIN: 1100256493
+FACEBOOK_SCOPE: email, public_profile, user_friends
+
+
+VK_KEY: 4761585
+VK_SECRET: qTF8dleCgDKLkuaLIAUx
+VK_JS_KEY: 4761585
+
+notification:
+  from: 'FamilyBoom.ru <nikogodoma@familyboom.ru>'
+
+contact_mail:
+  from: 'FamilyBoom.ru <noreply@inmyroom.ru>'
+  bcc: 'deploy@improvemedia.ru'
+  subject: 'Сообщение от пользователя FamilyBoom.ru'
+
+yandex:
+  site: 'familyboom'
+
+paginate:
+  posts: 12
+

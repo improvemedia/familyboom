@@ -1,0 +1,8 @@
+- if list && list.count > 0
+  .list.list__popular
+    //= link_to 'Наиболее популярное', [:reports], class: 'list_title'
+    .list_title Выбор редакции
+    ul.list_items
+      - list.each do |post|
+        li.list_item
+          = link_to post.title, slug_url(post)

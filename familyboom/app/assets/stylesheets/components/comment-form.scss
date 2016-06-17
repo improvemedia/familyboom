@@ -1,0 +1,75 @@
+.comment-form {
+  position: relative;
+  margin-top: 30px;
+  padding-left: 83px;
+}
+
+.comment-form__reply {
+  margin: 20px 0;
+
+  &:after {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -20px;
+    display: block;
+    border-bottom: 1px solid #f1f1f1;
+    content: '';
+  }
+}
+
+.comment-form_user_name {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.comment-form_submit {
+  @extend .btn;
+  @extend .btn__default-inverse;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.comment-form_add-pic {
+  @extend .btn;
+  @extend .btn__add-photo;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding-top: 2px;
+  display: none;
+
+  &:after {
+    content: 'Добавить фото';
+    display: inline-block;
+  }
+}
+
+.comment-form_body {
+  &:after {
+    position: absolute;
+    top: 13px;
+    left: -3px;
+    display: block;
+    width: 6px;
+    height: 6px;
+    border: 1px solid rgb(228,220,213);
+    border-width: 1px 1px 0 0;
+    background: #fff;
+    transform: rotate(-135deg);
+    content: '';
+  }
+
+  textarea {
+    min-height: 100px;
+    border-color: rgb(228,220,213) !important;
+    resize: none;
+    padding-bottom: 60px;
+  }
+}
+
+.comment-form_actions {
+  position: relative;
+}

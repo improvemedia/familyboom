@@ -1,0 +1,7 @@
+- pic_size ||= :medium
+- attrs ||= {}
+
+- if user.avatar.url
+  - url_arguments = user.persisted? && user.deleted? ? user : '#'
+  = link_to url_arguments, attrs.merge(class: "avatar#{ ' avatar-company' if user.company? }#{ ' avatar-pro' if user.pro? }") do
+    = image_tag user.avatar.url(pic_size)

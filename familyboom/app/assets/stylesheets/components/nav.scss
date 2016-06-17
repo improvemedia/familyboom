@@ -1,0 +1,25 @@
+.nav {
+  list-style: none;
+}
+
+.nav_item {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &.active .nav_link {
+    cursor: default;
+    opacity: 1;
+  }
+}
+
+.nav_link {
+  font-weight: 700;
+  opacity: 0.5;
+  color: #251812;
+
+  &:hover {
+    opacity: 1;
+    color: #251812;
+  }
+}

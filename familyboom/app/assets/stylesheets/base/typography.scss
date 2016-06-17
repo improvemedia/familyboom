@@ -1,0 +1,53 @@
+%h {
+  font-weight: 700;
+}
+
+.h1 {
+  font-size: 33px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.h2 {
+  @extend %h;
+  margin-bottom: 9px;
+  font-size: 14px;
+  color: #251812;
+}
+
+.h2-real {
+  text-transform: uppercase;
+  color: #3d3a3d;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.h3 {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.text {
+  font-size: 12px;
+  line-height: 18px;
+  color: #7f7b79;
+}
+
+.text__important {
+  color: #2d437b;
+}
+
+.link {
+  color: #2d8ed6;
+  text-decoration: none;
+}
+
+.link__profile {
+  color: #fc98a8;
+}

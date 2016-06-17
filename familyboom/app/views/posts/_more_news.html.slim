@@ -1,0 +1,118 @@
+- content_for :head do
+  = javascript_include_tag 'libs/adfox.asyn.code.scroll'
+  = javascript_include_tag 'libs/adfox.asyn.code.ver3'
+
+.container
+  .more-news
+    .h2-real Другие новости
+    .preview-list__tile
+      // -------------------------------------------------------------------------------- //
+      div
+        javascript:
+          var AdFox_Scroll = AdFox_Scroll || Function.prototype;
+          if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 4294967295) + 1; }
+          if (typeof(document.referrer) != 'undefined') {
+
+            if (typeof(afReferrer) == 'undefined') {
+              afReferrer = encodeURIComponent(document.referrer);
+            }
+
+          } else {
+            afReferrer = '';
+          }
+
+          var addate = new Date();
+
+          var scrheight = '', scrwidth = '';
+
+          if (self.screen) {
+
+            scrwidth = screen.width;
+            scrheight = screen.height;
+
+          } else if (self.java) {
+
+            var jkit = java.awt.Toolkit.getDefaultToolkit();
+            var scrsize = jkit.getScreenSize();
+
+            scrwidth = scrsize.width;
+            scrheight = scrsize.height;
+
+          }
+
+          var dl = encodeURIComponent(document.location);
+
+          var pr1 = Math.floor(Math.random() * 4294967295) + 1;
+
+          document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+
+          document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+
+          AdFox_Scroll(pr1,'//ads.adfox.ru/171817/prepareCode?p1=btpci&amp;p2=exqr&amp;pct=b&amp;pfc=a&amp;pfb=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;puid1=&amp;puid2=&amp;puid3=&amp;puid4=&amp;puid5=&amp;puid6=&amp;puid7=&amp;puid8=&amp;puid9=&amp;puid10=&amp;puid11=&amp;puid12=&amp;puid13=&amp;puid14=&amp;puid15=&amp;puid16=&amp;puid17=&amp;puid18=&amp;puid19=&amp;puid20=&amp;puid21=&amp;puid22=&amp;puid23=&amp;puid24=&amp;puid25=&amp;puid26=&amp;puid27=&amp;puid28=&amp;puid29=&amp;puid30=&amp;puid31=&amp;puid32=&amp;puid33=&amp;puid34=&amp;puid35=&amp;puid36=&amp;puid37=&amp;puid38=&amp;puid39=&amp;puid40=&amp;puid41=&amp;puid42=&amp;puid43=&amp;puid44=&amp;puid45=&amp;puid46=&amp;puid47=&amp;puid48=&amp;puid49=&amp;puid50=&amp;puid51=&amp;puid52=&amp;puid53=&amp;puid54=&amp;pdw=' + scrwidth + '&amp;pdh=' + scrheight + '&amp;random=122698131&amp;dl='+dl+'&amp;pr1='+pr1);
+
+      // -------------------------------------------------------------------------------- //
+
+      div
+        javascript:
+          var AdFox_Scroll = AdFox_Scroll || Function.prototype;
+          if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 4294967295) + 1; }
+
+          if (typeof(document.referrer) != 'undefined') {
+            if (typeof(afReferrer) == 'undefined') {
+              afReferrer = escape(document.referrer);
+            }
+          } else {
+            afReferrer = '';
+          }
+
+          var addate = new Date();
+          var scrheight = '', scrwidth = '';
+
+          if (self.screen) {
+            scrwidth = screen.width;
+            scrheight = screen.height;
+          } else if (self.java) {
+            var jkit = java.awt.Toolkit.getDefaultToolkit();
+            var scrsize = jkit.getScreenSize();
+            scrwidth = scrsize.width;
+            scrheight = scrsize.height;
+          }
+
+          var dl = encodeURIComponent(document.location);
+          var pr1 = Math.floor(Math.random() * 4294967295) + 1;
+
+          document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+
+          document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+
+          AdFox_Scroll(pr1,'//ads.adfox.ru/171817/prepareCode?p1=btpci&amp;p2=exqr&amp;pct=b&amp;pfc=a&amp;pfb=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;puid1=&amp;puid2=&amp;puid3=&amp;puid4=&amp;puid5=&amp;puid6=&amp;puid7=&amp;puid8=&amp;puid9=&amp;puid10=&amp;puid11=&amp;puid12=&amp;puid13=&amp;puid14=&amp;puid15=&amp;puid16=&amp;puid17=&amp;puid18=&amp;puid19=&amp;puid20=&amp;puid21=&amp;puid22=&amp;puid23=&amp;puid24=&amp;puid25=&amp;puid26=&amp;puid27=&amp;puid28=&amp;puid29=&amp;puid30=&amp;puid31=&amp;puid32=&amp;puid33=&amp;puid34=&amp;puid35=&amp;puid36=&amp;puid37=&amp;puid38=&amp;puid39=&amp;puid40=&amp;puid41=&amp;puid42=&amp;puid43=&amp;puid44=&amp;puid45=&amp;puid46=&amp;puid47=&amp;puid48=&amp;puid49=&amp;puid50=&amp;puid51=&amp;puid52=&amp;puid53=&amp;puid54=&amp;pdw=' + scrwidth + '&amp;pdh=' + scrheight + '&amp;random=122698131&amp;dl='+dl+'&amp;pr1='+pr1);
+
+      // -------------------------------------------------------------------------------- //
+
+      a.post-preview.post-preview__size_s href='http://familyboom.ru/posts/397-kak-organizovat-detskuyu-s-umom-praktichnye-idei'
+        .post-preview_pic
+          img src='http://n7.cdn.familyboom.ru/uploads/post/teaser/2d/2d5a/s_2d5a99f3-3e57-4b11-a470-c24db21c39ed.jpg?cache=1448481248343'
+        h3.post-preview_title Как организовать детскую с умом: практичные идеи
+
+
+      // -------------------------------------------------------------------------------- //
+
+      a.post-preview.post-preview__size_s href='http://familyboom.ru/posts/664-15-krutyh-idey-ot-ikea-dlya-detey-i-vzroslyh'
+        .post-preview_pic
+          img src='http://n4.cdn.familyboom.ru/uploads/post/teaser/43/4313/s_431330b1-c32b-4629-b9fb-bd1fd49002e8.jpg?cache=1448481952236'
+        h3.post-preview_title 15 крутых идей от IKEA для детей и взрослых
+
+      // -------------------------------------------------------------------------------- //
+
+      a.post-preview.post-preview__size_s href='https://www.inmyroom.ru/posts/11456-kak-organizovat-hranenie-v-detskoy-44-nezamenimye-veschi'
+        .post-preview_pic
+          img src='http://n6.cdn.inmyroom.ru/uploads/post/teaser/83/830c/s_830cad28-19ed-4e45-9031-8fd64a136f58.jpg?cache=1448481949640'
+        h3.post-preview_title Как организовать хранение в детской: 44 незаменимые вещи
+
+
+      // -------------------------------------------------------------------------------- //
+
+      a.post-preview.post-preview__size_s href='https://www.inmyroom.ru/posts/11269-obustraivaem-neskuchnuyu-detskuyu-44-podhodyaschie-veschi'
+        .post-preview_pic
+          img src='http://n7.cdn.familyboom.ru/uploads/post/teaser/2d/2d5a/s_2d5a99f3-3e57-4b11-a470-c24db21c39ed.jpg?cache=1448481248343'
+        h3.post-preview_title Обустраиваем нескучную детскую: 44 подходящие вещи

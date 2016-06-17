@@ -1,0 +1,21 @@
+table style="font-family: Tahoma, sans-serif; background-color: rgb(255, 255, 255)" width="100%"
+  tr
+    td
+      table width="600" style="margin: auto"
+        tr
+          td style="padding-bottom: 10px; padding-top: 23px"
+            p style="color: rgb(141, 141, 141); font-size: 14px; margin: 0"
+              |
+              = link_to "Ваш профиль", user_url(@notification.user), style: "color: rgb(141, 141, 141); font-size: 11px; text-decoration: none"
+              | &nbsp;|&nbsp;
+              = link_to 'Вопросы про FamilyBoom', "#{root_url}pages/about", style: "color: rgb(141, 141, 141); font-size: 11px; text-decoration: none"
+        tr
+          td style="padding-bottom: 32px"
+            p style="color: rgb(141, 141, 141); font-size: 14px; margin: 0"
+              = link_to 'Правила использования', "#{root_url}pages/terms", style: "color: rgb(141, 141, 141); font-size: 11px; text-decoration: none"
+              | &nbsp;|&nbsp;
+              = link_to 'Политика конфиденциальности', "#{root_url}pages/pol", style: "color: rgb(141, 141, 141); font-size: 11px; text-decoration: none"
+        tr
+          td
+            p style="color: rgb(141, 141, 141); font-size: 11px; margin: 0"
+              | #{ Time.new.year } © FamilyBoom

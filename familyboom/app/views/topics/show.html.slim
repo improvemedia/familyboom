@@ -1,0 +1,33 @@
+.content.article.topic.article-with-sticky-banner
+  .container
+    .article-main-part
+      .article_info
+        .article_date.article_info_item = verbose_date(@topic)
+        = link_to @topic_theme.title, @topic_theme, class: 'article_category article_info_item'
+      .article_title = @topic.pretty_title
+      = link_to "Автор: #{@topic.user.name}", @topic.user, class: 'article_author'
+      .article_content
+        .article_text.text-area = simple_format(@topic.content)
+
+        - if photos = @topic.photos
+          = render 'gallery', photos: photos
+
+      .shares
+        = render 'shared/shares_btns', btn_css_class: 'shares_action'
+        = render 'shared/btn_add_to_collection.html', resource: @topic, text: 'Отложить', class_name: 'btn btn-add-to-collection shares_action', counter_class_name: 'btn_counter'
+
+      /.next-nav
+      /  .next-nav_title Следущая в этом разделе
+      /  a.next-nav_link  Как обустроить жилье перед рождением ребенка
+
+      = render 'the_comments/tree', commentable: @topic, comments_tree: @comments, cls: 'article_comments'
+
+      .topics-last@more-block
+        .h2-real.topics-last_title Еще обсуждают
+        @more-items
+          = render @most_discussed_topics
+        = render 'topics/btn_more', topics: @most_discussed_topics
+
+    .article-aside
+      %%articleBanner
+        = render_banner('300x500-osnovnoy', 'banner')

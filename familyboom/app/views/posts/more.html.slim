@@ -1,0 +1,5 @@
+= render_post @posts[0..1], size: :l, cls: 'col col-6', wrapper: { cls: 'row posts-last_row' }
+= render_post @posts[2..4], size: :m, cls: 'col col-4', wrapper: { cls: 'row posts-last_row' }
+
+- unless @posts.last_page?
+  .btn.btn__size_l.btn__block@more-btn data-url=more_posts_path(page: params[:page].to_i + 1, per: params[:per]) Показать еще

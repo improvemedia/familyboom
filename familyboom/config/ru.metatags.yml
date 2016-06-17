@@ -1,0 +1,12 @@
+default:
+  title: 'FamilyBoom — сайт о материнстве и семье для ответственных родителей'
+  description: 'Самая полезная коллекция статей и советов о материнстве и семье'
+  keywords: 'Дети, семья, мама, папа'
+  social:
+    og:
+      image: 'http://FamilyBoom.ru.ru/share-teaser-default.png'
+      title: 'FamilyBoom — сайт о материнстве и семье для ответственных родителей'
+      description: 'Самая полезная коллекция статей и советов о материнстве и семье'
+      url: '%{request_url}'
+      site_name: 'FamilyBoom.ru'
+      type: 'website'

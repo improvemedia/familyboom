@@ -1,0 +1,7 @@
+gem 'jarvis', :path => File.expand_path('../../jarvis', __FILE__)
+
+eval(IO.read(File.expand_path('../../jarvis/Gemfile', __FILE__)), binding)
+
+#Dir.glob(File.join(File.dirname(__FILE__), 'vendor', 'plugins', '**', "Gemfile")) do |gemfile|
+#  eval(IO.read(gemfile), binding)
+#end

@@ -1,0 +1,37 @@
+.pagination {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.load-more {
+  @extend .btn;
+  @extend .btn__size_l;
+  display: block;
+  margin: 45px auto 0;
+  padding: 0;
+  max-width: 620px;
+}
+
+.pagination_item {
+  @extend .btn;
+  @extend .btn__size_l;
+  display: inline-block;
+  margin: 0 5px;
+  padding: 0;
+  min-width: 0;
+  width: 38px;
+
+  &.current {
+    @extend .btn__default-inverse;
+  }
+}
+
+.pagination_link {
+  display: block;
+  width: 38px;
+  height: 38px;
+
+  &, &:hover {
+    color: inherit;
+  }
+}

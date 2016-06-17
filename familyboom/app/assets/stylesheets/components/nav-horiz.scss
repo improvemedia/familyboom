@@ -1,0 +1,33 @@
+.nav-horiz_item {
+  display: inline-block;
+  vertical-align: bottom;
+
+  &:not(:last-child) {
+    margin-right: 47px;
+  }
+
+  &.active .nav-horiz_link {
+    opacity: 1;
+    border-bottom-color: #f26e54;
+    cursor: default;
+  }
+}
+
+.nav-horiz_link {
+  display: block;
+  border-bottom: 3px solid transparent;
+  padding: 0 2px 10px;
+  opacity: 0.7;
+  letter-spacing: 0.4px;
+  color: #251812;
+
+  &:hover {
+    opacity: 1;
+    border-bottom-color: #f26e54;
+    color: #251812;
+  }
+
+  .icon-settings {
+    margin-bottom: -3px;
+  }
+}

@@ -1,0 +1,5 @@
+= render layout: 'users/layout' do
+  - if @grouped_notifications.values.flatten.compact.any?
+    = render 'band'
+  - else
+    | Нет уведомлений

@@ -1,0 +1,14 @@
+/.vagrant
+.editorconfig
+# Mac
+.DS_Store
+.idea
+rev-manifest.json
+.tags*
+.sass-cache
+node_modules/
+kitchenmag/ui
+inmyroom/ui
+**/app/assets/stylesheets/icons.*
+icon-*.png
+marvin-icon-*.png

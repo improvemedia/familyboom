@@ -1,0 +1,18 @@
+= link_to user_path(user), class: 'user-preview col col-6' do
+  .user-preview_avatar
+    .avatar.avatar__size_xl
+      - if user.pro?
+        .avatar_badge.avatar_badge__pro pro
+  .user-preview_content
+    - if user.specialization.present?
+      .user-preview_profession = user.specialization
+    - if user.city.present?
+      .user-preview_location = user.city.name
+    .user-preview_name = user.name
+    - if user.description.present?
+      .user-preview_brif
+        = user.description.truncate(135)
+    - if user.phone.present?
+      .user-preview_phone = user.phone
+    - if user.site.present?
+      .user-preview_site = user.site

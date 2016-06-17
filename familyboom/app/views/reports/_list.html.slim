@@ -1,0 +1,6 @@
+.list.list__news
+  = link_to 'Новости', [:reports], class: 'list_title'
+  ul.list_items
+    - list.each do |report|
+      li.list_item
+        = render report

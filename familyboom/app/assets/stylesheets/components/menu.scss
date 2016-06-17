@@ -1,0 +1,16 @@
+.menu {
+  font-size: 14px;
+}
+
+.menu_link {
+  display: inline-block;
+  color: #a8a3a0;
+
+  &.active, &:hover {
+    color: #251812;
+  }
+
+  &:not(:first-child) {
+    margin-left: 30px;
+  }
+}

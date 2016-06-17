@@ -1,0 +1,22 @@
+.subnav {
+  position: relative;
+  margin: 0 0 25px;
+  padding: 17px 0 15px;
+  border-top: $section-border-style;
+  border-bottom: $section-border-style;
+}
+
+.subnav_link {
+  margin: 0 25px 0 0;
+  color: #bdb9b7;
+
+  &.active, &:hover {
+    color: #2d437b;
+  }
+}
+
+.subnav_action {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}

@@ -1,0 +1,33 @@
+ruby:
+  @forum ||= Forum.first || Forum.new
+  @topic ||= @forum.topics.new(id: 0) if @forum
+
+.content.discuss-new
+  .container: .row: .col.col-8: .row
+    = form_for [@forum, @topic], html: { data: { component: 'topicForm attachPhotos' } } do |f|
+      = f.hidden_field :topic_type, value: @topic.topic_type, class: 'js-topicFormType'
+
+      .form-group.col.col-4
+        .label
+          | Раздел обсуждения
+          .help
+
+        = f.select :forum_id, Forum.all.map { |f| [f.title, f.slug] }, {}, placeholder: 'Выберите основной раздел обсуждения', class: 'form-control js-topicFormForum'
+
+      .form-group.col.col-8
+        = f.text_area :title, autofocus: true, placeholder: 'Начните вводить заголовок обсуждения', class: 'discuss-new_header-control js-topicFormTitle', flexible: 'flexible'
+
+      .form-group.col.col-8
+        = f.text_area :content, placeholder: 'Кликните для написания текста обсуждения...', class: 'discuss-new_text-control js-topicFormContent ', flexible: 'flexible'
+
+      = f.hidden_field :photos_uids, value: nil, class: 'js-attachPhotosUids'
+
+      .col.col-8
+        ul.attach-photos.js-attachPhotosList.js-topicFormPhotoList
+
+      .discuss-new_actions.col.col-8
+        button.btn.btn__add-photo.btn-file
+          | Добавить фото
+          = file_field_tag :file, multiple: true, data: { url: forum_topic_photos_path(@forum, @topic, { processing_type: 'Topic' }) }, class: 'js-attachPhotosUpload'
+
+        = f.button 'Опубликовать', class: 'js-topicFormSubmit discuss-new_publish-btn btn btn__primary'

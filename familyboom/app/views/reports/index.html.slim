@@ -1,0 +1,20 @@
+.reports-index
+  .reports-index_title Новости
+
+  .clearfix
+    .reports-index_content
+      - if @reports_presenter.today.present?
+        = render 'reports/index_content', current_title: 'Сегодня', reports: @reports_presenter.today
+
+      - if @reports_presenter.week.present?
+        = render 'reports/index_content', current_title: 'На этой неделе', reports: @reports_presenter.week
+
+      - if @reports_presenter.later.present?
+        = render 'reports/index_content', current_title: 'Ранее', reports: @reports_presenter.later_decorate, list_id: 'index'
+
+    - if !request.xhr?
+      .reports-index_aside
+        .banner= BannerPlace.insert('300x500-osnovnoy', request.original_url).html_safe
+
+  - if @reports_presenter.later.present?
+    = render 'shared/paginator', items: @reports_presenter.later, items_count: @reports_presenter.reports_count

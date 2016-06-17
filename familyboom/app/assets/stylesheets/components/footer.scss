@@ -1,0 +1,142 @@
+.footer {
+  padding: ($gap-width*2) 0;
+  background-color: #ffefe0;
+  color: #7f7b79;
+
+  .social {
+    margin-left: 15px;
+  }
+}
+
+.footer_nav {
+  margin: 15px -10px 20px;
+  padding: 16px 10px 14px;
+  border-width: 1px 0 1px 0;
+  border-style: solid;
+  border-color: #f8e4d5;
+  box-shadow: inset 0 1px 0 #fff4e9, 0 1px 0 #fff4e9;
+  font-size: 11px;
+  white-space: nowrap;
+
+  &_item {
+    display: inline-block;
+
+    &:not(:first-child) {
+      margin-left: 48px;
+    }
+  }
+
+  &_link {
+    color: #2d437b;
+
+    &:hover {
+      color: #2d437b;
+      border-bottom: 1px solid;
+    }
+  }
+}
+
+.footer_logo {
+  margin: -20px 0 10px;
+}
+
+.footer_copyright {
+  margin-top: 10px;
+}
+
+
+.social {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #bdb1a6;
+  color: transparent;
+
+  &__vk {
+    &:hover {
+      background-color: #416389;
+    }
+    &:before {
+      @include icon(vk);
+    }
+  }
+  &__fb {
+    &:hover {
+      background-color: #475e93;
+    }
+    &:before {
+      @include icon(fb);
+    }
+  }
+  &__tw {
+    &:hover {
+      background-color: #4caaf1;
+    }
+    &:before {
+      @include icon(tw);
+    }
+  }
+  &__inst {
+    &:hover {
+      background-color: #517fa4;
+    }
+    &:before {
+      @include icon(inst);
+    }
+  }
+}
+
+.IM-projects {
+  float: left;
+}
+
+.IM-project {
+  display: inline-block;
+  vertical-align: middle;
+  color: transparent;
+
+  &__inmyroom {
+    @include icon(inmyroom);
+    margin: 9px 0 0 1px;
+    vertical-align: top;
+
+    &:hover {
+      @include icon(inmyroom-hover);
+    }
+  }
+
+  &__kitchenmag {
+    margin: 1px 0 0 52px;
+    vertical-align: top;
+
+    @include icon(kitchenmag);
+
+    &:hover {
+      @include icon(kitchenmag-hover);
+    }
+  }
+}
+
+.footer_rambler {
+  float: right;
+  margin-top: 7px;
+}
+
+.footer_rambler-logo,
+.footer_rambler-link {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.footer_rambler-link {
+  position: relative;
+  top: -1px;
+  margin-right: 12px;
+  color: #7F7B79;
+
+  b {
+    margin-left: 5px;
+  }
+}
+

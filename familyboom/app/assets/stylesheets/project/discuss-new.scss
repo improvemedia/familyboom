@@ -1,0 +1,71 @@
+.discuss-new_header-control,
+.discuss-new_text-control {
+  @include reset-element();
+}
+
+.discuss-new_header-control {
+  height: 80px;
+  font-size: 36px;
+  font-family: "GothamPro";
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.discuss-new_text-control {
+  height: 120px;
+  font-family: 'PT Serif', serif;
+  font-size: 17px;
+}
+
+/*
+.discuss-new_tags {
+  border-top: 1px solid rgba(#b7b7b7, 0.2);
+  border-bottom: 1px solid rgba(#b7b7b7, 0.2);
+  padding: 15px 0;
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .label {
+    padding: 0 6px;
+  }
+
+  .hint {
+    padding-right: 6px;
+  }
+}
+
+.discuss-new_tags-choice {
+  position: relative;
+  padding-left: 6px;
+}
+
+.discuss-new_tags-list {
+  padding: 0 6px;
+
+  .tag {
+    margin-top: 15px;
+  }
+}
+
+.discuss-new_tags-btn {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  padding: 0;
+  min-width: 30px;
+  text-transform: uppercase;
+  line-height: 30px;
+}
+*/
+
+.discuss-new_actions {
+  padding: 10px 6px 0;
+}
+
+.discuss-new_publish-btn {
+  float: right;
+}
+
+

@@ -1,0 +1,93 @@
+// global
+body {
+  background-color: #fff;
+  color: $text-color;
+}
+
+body, input, textarea {
+  font: 12px/1.5 "GothamPro", Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: #2d437b;
+  text-decoration: none;
+  &:hover {
+    color: #2d8ed6;
+  }
+  img {
+    border: none;
+  }
+}
+
+
+// mods
+@mixin clf() {
+  &:after {
+    overflow: hidden;
+    display: block;
+    float: none;
+    clear: both;
+    width: 100%;
+    height: 0;
+    content: '';
+  }
+}
+
+// grid
+$content-width: 960px;
+$gap-width: 10px;
+$container-width: $content-width - ($gap-width * 2);
+$col-num: 12;
+$col-width: 60px;
+
+@include sticky-footer(254px);
+
+.page {
+  min-width: $content-width;
+}
+
+@mixin container {
+  @include clf;
+  margin: 0 auto;
+  width: $container-width;
+}
+
+.container {
+  @include container;
+}
+
+.row {
+  @include clf;
+  margin-right: -$gap-width;
+  margin-left: -$gap-width;
+}
+
+@function getWidthCol($i) {
+  @return ($col-width + $gap-width * 2) * $i - 2 * $gap-width;
+}
+
+.col {
+  float: left;
+  margin-right: $gap-width;
+  margin-left: $gap-width;
+
+  @for $i from 1 through 12 {
+    &-#{$i} {
+      width: getWidthCol($i);
+    }
+  }
+
+  @for $i from 1 through 11 {
+    &-push-#{$i} {
+      margin-left: $col-width * $i;
+    }
+  }
+}
+
+.content {
+  padding: 40px 0 40px;
+}
+
+.aside {
+  position: relative;
+}

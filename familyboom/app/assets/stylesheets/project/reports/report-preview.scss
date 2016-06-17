@@ -1,0 +1,37 @@
+.report-preview {
+  overflow: hidden;
+  display: block;
+  color: #251812;
+
+  &:not(:last-child) {
+    margin-bottom: 39px;
+  }
+}
+
+.report-preview_date {
+  float: left;
+  width: 60px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.report-preview_content {
+  overflow: hidden;
+  margin: 0 0 0 6px;
+  font-size: 13px;
+  font-weight: 400;
+  vertical-align: top;
+}
+
+
+.list {
+  .report-preview {
+    color: #251812;
+    padding: 0 15px;
+  }
+
+  .report-preview_content {
+    color: #645952;
+  }
+}

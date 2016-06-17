@@ -1,0 +1,56 @@
+.text-area,
+.article-text {
+  margin: 0 0 40px;
+  padding: 0 40px 0 0;
+  font: $content-font;
+
+  h1 {
+    margin: 11px 0 21px;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 500;
+    font-family: GothamPro;
+  }
+
+  p {
+    margin: 0 0 40px;
+  }
+
+  p + ol,
+  p + ul {
+    margin-top: -30px;
+  }
+
+  ul, ol {
+    list-style: none;
+    margin: 0 0 27px 20px;
+  }
+
+  ul, ol {
+    ul, ol {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    > li {
+      &:before {
+        margin: 0 10px 0 0;
+        font-weight: 700;
+        content: "―";
+      }
+    }
+  }
+
+  ol {
+    > li {
+      counter-increment: item;
+
+      &:before {
+        margin: 0 10px 0 0;
+        font-weight: 700;
+        content: counter(item) ".";
+      }
+    }
+  }
+}

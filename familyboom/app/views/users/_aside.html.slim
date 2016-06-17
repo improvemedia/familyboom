@@ -1,0 +1,17 @@
+.user_aside
+  .user_aside_section
+    .text
+      | На FamilyBoom с&nbsp;
+      br
+      span.text.text__important
+        = smart_date(user.created_at, style: :full)
+  .user_aside_section
+    .h2
+      | Обо мне
+    .text
+      - if user.description.present?
+        = user.description
+      - else
+        - if current_user == user
+          | К сожалению, вы еще не заполнили информацию о себе, чтобы это сделать перейдите в&nbsp;
+          = link_to 'настройки', my_profile_path

@@ -1,0 +1,306 @@
+@mixin make-btn-default() {
+  & {
+    display: inline-block;
+    cursor: pointer;
+    margin: 0;
+    border: 1px solid #bdb1a6;
+    background-color: #fff;
+    color: #bdb1a6;
+    text-align: center;
+    font-size: 12px;
+    font-family: "GothamPro", Arial, sans-serif;
+    transition: background-color $transition-time ease, color $transition-time ease;
+  }
+
+  &:hover {
+    background-color: #bdb1a6;
+    color: #fff;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active,
+  &.active {
+    background-image: none;
+    outline: 0;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    opacity: .65;
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+  }
+}
+
+.btn {
+  @include make-btn-default();
+  height: 30px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 3px;
+  line-height: 27px;
+  min-width: 126px;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active,
+  &.active {
+    background-image: none;
+    outline: 0;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    opacity: .65;
+    box-shadow: none;
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+  }
+}
+
+.btn_counter,
+.share-btn_count {
+  display: inline-block;
+  vertical-align: middle;
+
+  // HACK
+  width: 30px;
+  margin: 0 -12px 0 0;
+
+  &:before {
+    vertical-align: middle;
+    content: '|';
+    margin: 0 5px;
+  }
+}
+
+input.btn, button.btn {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn__default-inverse {
+  background-color: #bdb1a6;
+  color: #fff;
+
+  &:hover {
+    color: #bdb1a6;
+    background: #fff;
+  }
+}
+
+.btn__inverse {
+  border-color: #fff;
+  color: #fff;
+  background-color: transparent;
+
+  &:hover {
+    color: #f9b7a8;
+    background-color: #fff;
+  }
+}
+
+.share-btn__vk,
+.share-btn__fb,
+.share-btn__tw,
+.share-btn__ok {
+  @extend .btn;
+}
+
+.share-btn__vk,
+.share-btn__fb,
+.share-btn__tw,
+.share-btn__ok,
+.btn-add-to-collection {
+  position: relative;
+  height: 32px;
+  padding-left: 32px;
+  padding-top: 1px;
+  width: 140px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 32px;
+  text-transform: uppercase;
+  border: none;
+  text-align: left;
+  vertical-align: top;
+  font-weight: 500;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    bottom: 0;
+    margin: auto;
+  }
+
+  &.btn__shot {
+    &:before {
+      right: 0;
+      left: 0;
+    }
+  }
+}
+
+.share-btn__vk {
+  background: #416389;
+
+  &:hover {
+    background: #355070;
+  }
+
+  &:before {
+    @include icon(btn-vk);
+  }
+}
+
+.share-btn__fb {
+  background: #475e93;
+
+  &:hover {
+    background: #3b4e7a;
+  }
+
+  &:before {
+    @include icon(btn-fb);
+  }
+}
+
+.share-btn__ok {
+  background: #f59310;
+
+  &:hover {
+    background: #e0860d;
+  }
+
+  &:before {
+    @include icon(btn-ok);
+  }
+}
+
+.share-btn__tw {
+  background: #4caaf1;
+
+  &:hover {
+    background: #4599d9;
+  }
+
+  &:before {
+    @include icon(btn-tw);
+  }
+}
+
+.btn-add-to-collection {
+  @extend .btn;
+  background: #ffcb05;
+
+  &:hover {
+    background: #e6b905;
+  }
+
+  &:before {
+    @include icon(btn-add-to-collection);
+  }
+}
+
+.btn__primary {
+  background-color: #bdb1a6;
+  color: #fff;
+
+  &:hover {
+    background-color: #c9bdb1;
+  }
+}
+
+.btn__danger {
+  border-color: #f26e54;
+  color: #f26e54;
+
+  &:hover {
+    background-color: #f26e54;
+  }
+}
+
+.btn__success {
+  background: #5dca88;
+  border-color: #5dca88;
+  color: #fff;
+
+  &:hover {
+    color: #5dca88;
+    background: #fff;
+  }
+}
+
+.btn__add {
+  border-color: transparent;
+  background-color: rgba(#bdb1a6, 0.2);
+  color: #251812;
+
+  &:hover {
+    background-color: #bdb1a6;
+    color: #fff;
+  }
+}
+
+.btn__size_m {
+  padding-right: 88px;
+  padding-left: 88px;
+}
+
+.btn__size_l {
+  font-size: 14px;
+  height: 38px;
+  line-height: 38px;
+}
+
+.btn__block {
+  display: block;
+  width: 100%;
+}
+
+.btn__add-photo {
+  position: relative;
+  background: #f7f4f1;
+  color: #645a54;
+  border: none;
+  padding-left: 36px;
+
+  &:before {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    transition: opacity $transition-time;
+  }
+
+  &:before {
+    @include icon(btn-add-photo);
+  }
+
+  &:hover:before {
+    @include icon(btn-add-photo-inverse);
+  }
+}
+
+.btn__pillow {
+  height: 26px;
+  line-height: 26px;
+  border-radius: 20px;
+  min-width: 0;
+}

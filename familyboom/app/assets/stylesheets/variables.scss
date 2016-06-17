@@ -1,0 +1,38 @@
+// BASE
+// -------------------------
+$text-main-family: "Proxima Nova", "Helvetica CY", "Trebuchet MS", Arial, sans-serif;
+$text-accident-family: $text-main-family;
+$text-functional: $text-main-family;
+$white-space-width: 0.25em;
+
+$main-bg: rgb(248, 248, 248);
+$brand-bg: rgb(173,18,0);
+$brand-color: rgb(173,18,0);
+$speed-fast: .15s;
+
+$btn-font-family: $text-functional;
+$select-font-family: $text-accident-family;
+$nav-font-family: $text-accident-family;
+$avatar-font-family: $text-accident-family;
+
+$text-color: #251812;
+$title-color: $text-color;
+$link-color: $text-color;
+$link-default: rgb(67,110,179);
+
+$border-radius-base: 3px;
+
+$input-padding-base-vertical: 7px;
+$input-padding-base-horizontal: 11px;
+$input-bg:                       #fff !default;
+$input-bg-disabled:              #eee !default;
+$input-border:                   rgb(225,225,225);
+$input-color:                    rgb(82,82,82);
+$input-color-placeholder:        #eee !default;
+$input-border-radius:            $border-radius-base;
+$input-height-base:              30px;
+
+$countCol: 12;
+$widthGutter: 20px;
+$widthCol: 60px;
+$grid: 'fixed';

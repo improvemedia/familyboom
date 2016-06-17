@@ -1,0 +1,41 @@
+.user_header class="#{ 'has-gradient' if user.try(:gradient) }" data={ role: :user_bg } style="background-image: url(#{user.user_bg.url(:cropped)});"
+  .container.user_header_inner
+    .row
+      .col.col-2.user_header_avatar
+        .avatar.avatar__size_l
+          img%%avatar src=user.avatar.url(:large)
+
+      .col.col-10.user_header_info
+        .user_general
+          .user_type
+            = "#{user.user_type_text}"
+            - if user.city.present?
+              |,&nbsp;
+              span.user_location
+                = user.city.name
+
+          .user_name
+            = user.name
+
+          - if user.specialization.present?
+            .user_profession
+              = user.specialization
+
+          - if user.site.present? || user.facebook.present? || user.twitter.present? || user.vkontakte.present?
+            .user_contacts
+              - if user.site.present?
+                a.user_contacts_item.user_contacts_item__site(href=user.site)
+              - if user.facebook.present?
+                a.user_contacts_item.user_contacts_item__fb(href=user.facebook)
+              - if user.twitter.present?
+                a.user_contacts_item.user_contacts_item__tw(href=user.twitter)
+              - if user.vkontakte.present?
+                a.user_contacts_item.user_contacts_item__vk(href=user.vkontakte)
+        = render 'users/header_links', user: user
+    - if current_user == user
+      .user-actions
+        = render 'users/btn_change_bg', btn_html: { class: 'user-actions_item' }
+        = render 'users/btn_toggle_gradient', btn_html: { class: 'user-actions_item' }, user: user
+        = render 'users/btn_change_avatar', btn_html: { class: 'user-actions_item' }, user: user
+
+

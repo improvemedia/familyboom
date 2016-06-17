@@ -1,0 +1,13 @@
+- if Rails.env.production?
+  - content_for :foot
+    javascript:
+      dataLayer.push({'event': '404'});
+
+.error-page
+  .container
+  .error-page_logo
+  .error-page_baby
+  .error-page_title = @code
+  .error-page_description Упс. Что-то пошло не так...
+  a.error-page_btn.btn.btn__default-inverse.btn__size_l href=root_path Главную
+

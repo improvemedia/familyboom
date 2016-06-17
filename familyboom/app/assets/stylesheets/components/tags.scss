@@ -1,0 +1,45 @@
+.tags {
+  padding: 20px 0;
+}
+
+.tag {
+  margin-right: 10px;
+}
+
+.tag {
+  display: inline-block;
+  position: relative;
+  border-radius: 13px;
+  border: 1px solid #bdb1a6;
+  padding: 0 13px;
+  height: 26px;
+  line-height: 26px;
+  color: #bdb1a6;
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.tag__view {
+  @include make-btn-default();
+
+  .tag_remove {
+    display: none;
+  }
+}
+
+.tag__editable {
+  padding-right: 25px;
+
+  .tag_remove {
+    display: block;
+  }
+}
+
+.tag_remove {
+  @include icon(remove-pink);
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}

@@ -1,0 +1,41 @@
+- cls            ||= nil
+- without_header   = @without_header || controller?('users') && action?('show', 'by_users') || controller?('collections', 'portfolios', 'profiles', 'notifications', 'registrations')
+
+.header
+  .header_topbar
+    .header_topbar_main: .container
+      .header_logo
+        = link_to root_path, class: 'header_logo_link' do
+          = image_tag 'logo-topbar.png', class: 'header_logo_img'
+
+      ul.header_nav data-role='drop-nav'
+        li.header_nav_item
+          a.header_nav_link href='/tags/podgotovka-k-beremennosti' Подготовка
+        li.header_nav_item
+           a.header_nav_link href='/tags/beremennost' Беременность
+        li.header_nav_item
+           a.header_nav_link href='/tags/do-1-goda' До года
+        li.header_nav_item
+           a.header_nav_link href='/tags/ot-1-do-3-let' От 1 до 3 лет
+        li.header_nav_item
+           a.header_nav_link href='/tags/ot-3-do-7-let' От 3 до 7 лет
+        li.header_nav_item
+          a.header_nav_link href='/tags/ot-7-do-10-let' От 7 лет
+
+      - if current_user
+        = render 'layouts/user_nav'
+      - else
+        .header_login data-needs-auth=true Войти
+
+      a.search-toggle.header_search href=search_search_polytypic_path
+
+  - unless without_header
+    .header_main: .container
+      ul.header_main-nav
+        li.header_main-nav_item class=('active' if current_page?(posts_path))
+          = link_to 'Статьи', posts_path, class: 'header_main-nav_link'
+
+        li.header_main-nav_item: a.header_main_logo href="/" = image_tag "logo-header.png"
+
+        li.header_main-nav_item class=('active' if current_page?(forums_path))
+          = link_to 'Советы', forums_path, class: 'header_main-nav_link'

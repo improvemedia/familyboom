@@ -1,0 +1,22 @@
+- collectible = collector.collectible
+- collection = collector.collection
+- entity_id = collectible.class.name + '_' + collectible.id.to_s
+
+.collectible id=entity_id
+  - is_admin = false
+  - if current_user
+    - is_admin = current_user.admin? || current_user.editor?
+
+  - if collectible.is_a? ::Jarvis::Post
+    .manage-links-wrap class="#{ 'manage-links-wrap-extend' if is_admin }"
+      = render_post(collectible, size: :m)
+
+      - if collection.user == current_user
+        .manage-links
+          = link_to 'Убрать', polymorphic_url([collection.user, collection], params: collector.attributes_for_destroy), method: :patch, remote: true, data: { type: :json }
+          = link_to 'Переместить', new_move_between_collection_path(collection: {move: {collectible_id: collectible.id, collection_id: collection.id}}, format: :json), remote: true
+          = link_to 'Сдалать обложкой', assign_cover_collection_collector_path(collection, collector), method: :patch
+
+  - if collectible.is_a? Topic
+    = render collectible
+

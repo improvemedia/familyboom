@@ -1,0 +1,30 @@
+.post-preview-group {
+  .post-preview__size_xl {
+    float: none;
+    clear: both;
+    margin-bottom: 40px;
+  }
+
+  .post-preview__size_m {
+    float: left;
+    margin-bottom: 40px;
+    margin-left: 20px;
+  }
+
+  .post-preview__size_xl + .post-preview__size_m {
+    margin-left: 0;
+  }
+}
+
+.post-preview-group_more {
+  clear: both;
+  margin-top: -7px;
+}
+
+.posts-last_title {
+  margin-bottom: 40px;
+}
+
+.posts-last_row {
+  margin-bottom: 60px;
+}

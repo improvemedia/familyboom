@@ -1,0 +1,23 @@
+.range-nav {
+  display: none;
+  overflow: hidden;
+}
+
+.range-nav_title {
+  float: left;
+  color: #2d437b;
+  border: 1px solid;
+  padding: 5px 12px;
+  border-radius: 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.range-nav_item {
+  float: left;
+  color: #251812;
+
+  &.active {
+    color: #fc98a8;
+  }
+}

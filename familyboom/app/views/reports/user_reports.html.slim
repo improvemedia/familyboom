@@ -1,0 +1,9 @@
+= render layout: 'users/layout' do
+  .container
+    - if @reports.blank?
+      .user-page-title Нет опубликованных новостей
+    - else
+      #index
+        = render @reports
+
+      = render 'shared/paginator', items: @reports, items_count: @reports_count

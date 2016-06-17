@@ -1,0 +1,9 @@
+- objects ||= 'objects undefined'
+
+.gallery.gallery-loading%%gallery class=('gallery-slider' if objects.size > 1)
+  ul.slides
+    - objects.each do |object|
+      li
+        .gallery_image
+          img data-original=object.photo_url alt=object.alt
+          .caption= object.description

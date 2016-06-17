@@ -1,0 +1,23 @@
+= render 'shared/gtm_datalayer', vars: @presenter.datalayer_vars if @presenter.promo?
+
+- title       = @presenter.page_title(default: 'ВСЕ СТАТЬИ')
+- description = @presenter.page_description
+
+.posts-index.content.container
+  h1.h1.index_title = title
+  #index
+    .row
+      .col.col-8
+        .post-preview-group
+          = render_post @presenter.posts[0..3], sizes: [:xl, :m, :m, :xl]
+      .col.col-4
+        = render 'posts/list', list: @presenter.editor_choice_posts
+        = render_banner(request.xhr? ? '300x500-ajax' : '300x500-osnovnoy', 'banner')
+        = render_banner('300x395-tema-mesyatsa', 'banner-theme')
+
+    = render_post @presenter.posts[4..6], size: :m, cls: 'col col-4', wrapper:  { cls: 'row posts-index_row'}
+    = render_post @presenter.posts[7..8], size: :l, cls: 'col col-6', wrapper:  { cls: 'row posts-index_row'}
+    = render_post @presenter.posts[9..11], size: :m, cls: 'col col-4', wrapper: { cls: 'row posts-index_row'}
+
+  = render 'shared/paginator', items: @presenter.posts, items_count: @presenter.posts_count
+

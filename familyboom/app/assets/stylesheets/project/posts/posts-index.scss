@@ -1,0 +1,130 @@
+.posts-index {
+  .paginator_more {
+    width: 620px;
+    margin: auto;
+  }
+
+  .tags-nav {
+    border-bottom: $section-border-style;
+  }
+}
+
+.index_title {
+  margin-top: -13px;
+}
+
+.posts-index .index_title {
+  margin-bottom: 30px;
+}
+
+.posts-index_row {
+  margin-bottom: 40px;
+}
+
+.tags-nav {
+  margin: 0 0 40px;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.tags-nav_item {
+  position: relative;
+  display: block;
+  float: left;
+  width: 140px;
+  text-align: center;
+  color: #928b88;
+  text-transform: uppercase;
+  border-radius: 5px;
+  height: 115px;
+  transition: all $transition-time;
+  border: 1px solid transparent;
+  margin-right: 20px;
+  padding: 60px 5px 0;
+  vertical-align: top;
+  line-height: 1.2;
+
+  &:nth-child(6n) {
+    margin-right: 0;
+  }
+
+  &:hover, &.selected {
+    color: #928b88;
+    background: #f7f7f7;
+    border-color: #e6e6e6;
+  }
+
+  &:after {
+    position: absolute;
+    display: block !important;
+    margin: auto;
+    right: 0;
+    bottom: 72px;
+    left: 0;
+  }
+}
+
+.tags-nav_item,
+.topic-preview_category {
+ &__funny {
+    &:after {
+      @include icon(funny);
+    }
+  }
+
+  &__zdorovye {
+    &:after {
+      @include icon(health);
+    }
+  }
+
+  &__krasota {
+    &:after {
+      @include icon(beauty);
+    }
+  }
+
+  &__uhod-za-rebenkom {
+    &:after {
+      @include icon(baby);
+    }
+  }
+
+  &__razvitie-i-obrazovanie {
+    &:after {
+      @include icon(growth);
+    }
+  }
+
+  &__pokupki {
+    &:after {
+      @include icon(cart);
+    }
+  }
+
+  &__pitanie {
+    &:after {
+      @include icon(food);
+    }
+  }
+
+  &__dosug {
+    &:after {
+      @include icon(leisure);
+    }
+  }
+
+  &__psihologia {
+    &:after {
+      @include icon(psychology);
+    }
+  }
+
+  &__detskaya-komnata {
+    &:after {
+      @include icon(room);
+    }
+  }
+}
+
+

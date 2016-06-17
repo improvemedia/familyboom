@@ -1,0 +1,392 @@
+.header {}
+
+.header_topbar {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  -webkit-transform: translateZ(0);
+
+  .container {
+    position: relative;
+  }
+
+  &.is-fixed {
+    position: fixed;
+  }
+}
+
+.header_topbar_main {
+  position: relative;
+  height: 65px;
+  z-index: 1;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.126);
+}
+
+.header_logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  margin-top: 20px;
+  opacity: 0;
+  transition: transform $transition-time $transition-time;
+  transform: scale(0);
+
+  &_img {
+    width: 28px;
+    height: 23px;
+  }
+}
+
+.header_nav {
+  float: left;
+  margin: 0;
+  font-size: 13px;
+  transition: margin $transition-time;
+}
+
+.header_nav_item {
+  float: left;
+  margin: 0 23px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  transition: margin $transition-time;
+}
+
+.header_nav_link {
+  display: block;
+  padding: 24px 0 22px;
+
+  &:hover, .active > & {
+    color: #fc98a8;
+    box-shadow: 0 3px 0 #fc98a8;
+  }
+}
+
+.header_login {
+  float: right;
+  margin-top: 26px;
+  font-weight: 500;
+  white-space: nowrap;
+  font-size: 11px;
+  text-transform: uppercase;
+
+  &:before {
+    @include icon(login);
+    margin: 3px 9px 0 0;
+    vertical-align: top;
+  }
+}
+
+.header_search {
+  float: right;
+  margin: 19px 20px 0 0;
+}
+
+.search-toggle {
+  padding: 8px;
+  width: 30px;
+  height: 30px;
+  background: #eaecf2;
+  border-radius: 50%;
+  transition: background $transition-time;
+
+  &:before {
+    @include icon(topbar-search, b);
+    opacity: 0.3;
+    transition: opacity $transition-time;
+  }
+
+  &:hover {
+    background: #d2d4d9;
+
+    &:before {
+      opacity: 0.7;
+    }
+  }
+}
+
+.header_drop {
+  position: absolute;
+  overflow: hidden;
+  top: 100%;
+  right: 0;
+  left: 0;
+  margin-top: -1px;
+  max-height: 0;
+  transition: max-height 0.4s;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.126);
+
+  &.is-open {
+    max-height: 1000px;
+  }
+
+  a {
+    display: block;
+  }
+}
+
+.header_drop_inner {
+  margin-left: 5px;
+  //transition: margin $transition-time;
+}
+
+.header_drop_col {
+  float: left;
+  width: 220px;
+  margin-right: 20px;
+}
+
+.header_topbar.is-transitioned {
+  .header_logo {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .header_nav {
+    margin-left: 67px;
+  }
+}
+
+.nav-vertical {
+  padding: 25px 0;
+  line-height: 2;
+}
+
+.nav-vertical_title {
+  margin: 0 0 3px;
+  color: #2D437B;
+  font-weight: 500;
+}
+
+.nav-vertical_link {
+  display: block;
+  color: #7f7b79;
+
+  &:hover {
+    color: #fc98a8;
+  }
+}
+
+.header_user {
+  float: right;
+  padding: 11px 0 13px;
+  width: 60px;
+
+  &:after {
+    @include triangle(t, #251812, 5px, 3px);
+    position: absolute;
+    top: 31px;
+    right: 6px;
+    content: '';
+  }
+}
+
+.header_user_avatar {
+  position: relative;
+  display: block;
+  margin: 0 0 0 4px;
+  width: 42px;
+  background-clip: content-box;
+
+  img {
+    position: relative;
+    display: block;
+    border-radius: 50%;
+  }
+
+  .header_user:hover & {
+    border-color: #fc98a8;
+
+    &:before {
+      background: #fc98a8;
+    }
+  }
+
+  &.has-messages {
+    &:before {
+      transition: background $transition-time;
+      position: absolute;
+      top: 1px;
+      right: -5px;
+      width: 14px;
+      height: 14px;
+      background: transparent;
+      border-radius: 50%;
+      content: '';
+    }
+
+    &:after {
+      position: absolute;
+      top: 3px;
+      right: -3px;
+      width: 10px;
+      height: 10px;
+      background: #f26e54;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      content: '';
+      animation: fade-in 1s 0.5s infinite;
+    }
+  }
+}
+
+.header_user-nav {
+  margin-top: -1px;
+  //overflow: hidden;
+  position: absolute;
+  //max-height: 0;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border: 2px solid #fc98a8;
+  min-width: 152px;
+  padding: 12px 20px;
+  transition: all $transition-time;
+  visibility: hidden;
+  opacity: 0;
+
+  &:before {
+    position: absolute;
+    top: -7px;
+    right: 28px;
+    height: 10px;
+    width: 10px;
+    border: 2px solid #fc98a8;
+    border-width: 0 2px 2px 0;
+    background: #fff;
+    content: '';
+    transform: rotate(-135deg);
+  }
+
+  .header_user:hover & {
+    //max-height: 2000px;
+    //padding: 12px 20px;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.header_user-nav_link {
+  display: block;
+  color: #2d437b;
+  line-height: 30px;
+  margin: 0 -20px;
+  padding: 0 20px;
+
+  &:hover {
+    color: #2d437b;
+    background: #ffefe0;
+  }
+}
+
+.badge {
+  display: inline-block;
+  background: #f26e54;
+  padding: 2px 3px 1px;
+  border-radius: 7px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  min-width: 13px;
+  text-align: center;
+}
+
+.header_user-nav_notification-counter {
+  display: block;
+  float: right;
+  margin: 7px 0 0;
+  min-width: 13px;
+}
+
+.header_user-nav_exit {
+  display: block;
+  margin: 3px -20px -13px;
+  padding: 12px 20px 10px;
+  border-top: 1px solid #eaecf2;
+  color: #a9afc3;
+  line-height: 1;
+
+  &:before {
+    @include icon(topbar-exit);
+    margin: -4px 9px 0 1px;
+    vertical-align: top;
+  }
+}
+
+.header_main {
+  margin: 0 0 8px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #f6f6f6;
+}
+
+.header_main_logo {
+  display: block;
+  height: 86px;
+
+  img {
+    display: block;
+    width: 290px;
+    height: 94px;
+  }
+}
+
+.header_main-nav {
+  font-weight: 500;
+  text-align: center;
+}
+
+.header_main-nav_item {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  &:first-child {
+    margin-right: 40px;
+    top: 1px;
+
+    + .header_main-nav_item + .header_main-nav_item {
+      top: 1px;
+      margin-left: 40px;
+    }
+  }
+}
+
+.header_main-nav_link {
+  color: #7f7b79;
+  font-size: 14px;
+  line-height: 15px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.header_main-nav_link__coming-soon {
+  position: relative;
+  opacity: 0.2;
+
+  &:hover {
+    color: #7f7b79;
+    opacity: 1;
+    transition: opacity $transition-time;
+  }
+
+  &:before {
+    position: absolute;
+    top: -13px;
+    font-size: 11px;
+    content: "Скоро";
+    text-transform: none;
+  }
+}

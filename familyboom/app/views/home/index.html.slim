@@ -1,0 +1,34 @@
+- cache(['home_index_view', current_user.try(:role).try(:name), params], expires_in: 1.minute) do
+  .content.container
+    .row
+      .col.col-8
+        .post-preview-group
+          = render_post @presenter.most_interesting, sizes: [:xl, :m, :m, :xl, :m, :m]
+        = link_to 'Все статьи', posts_path, class: 'btn btn__size_l btn__block post-preview-group_more'
+      .col.col-4
+        = render 'posts/list', list: @presenter.editor_choices
+        = render_banner('300x500-osnovnoy', 'banner')
+        = render_banner('300x395-tema-mesyatsa', 'banner-theme')
+        / = render 'reports/list', list: @presenter.reports
+
+    - cache @topics do
+      - if @topics.count > 0
+        .topics-feed
+          .topics-feed_header
+            a.topics-feed_title href=forums_path Обсуждения
+            = link_to_new_topic('Создать тему', class: 'btn topics-feed_header_btn')
+
+          .topics-feed_content@more-block
+            @more-items
+              = render @topics
+              = render 'topics/btn_more', topics: @topics
+
+    - cache @posts_by_tags do
+      - @posts_by_tags.each do |group|
+        - group.each do |tag, posts|
+          .section class="section__#{tag.slug}"
+            = link_to tag_posts_path(tag), class: 'section_title' do
+              span.icon
+              = tag.name
+            .row
+              = render_post(posts, size: :s, cls: 'col col-2')

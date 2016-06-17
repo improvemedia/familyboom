@@ -1,0 +1,8 @@
+= render layout: 'users/layout' do
+  - if @posts.blank?
+    .user-page-title Нет опубликованных статей
+  - else
+    .user_posts.row#index
+      = render_post(@posts, size: :s, cls: 'col col-2')
+
+    = render 'shared/paginator', items: @posts, items_count: @posts_count

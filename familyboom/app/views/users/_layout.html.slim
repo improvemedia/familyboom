@@ -1,0 +1,19 @@
+- user ||= @user ? @user : resource
+- aside_html ||= false
+- full_width ||= false
+
+.user.content
+  = render 'users/header', user: user
+
+  .container
+    - if full_width
+      = yield
+    - else
+      .row
+        .col.col-2
+          - if aside_html
+            = aside_html
+          - else
+            = render 'users/aside', user: user
+        .col.col-10.user_content
+          = yield

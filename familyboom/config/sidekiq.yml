@@ -1,0 +1,12 @@
+---
+:verbose: true
+:concurrency: <%= ENV['MRVN_SIDEKIQ_CONCURRENCY'] %>
+:timeout: 300
+
+:queues:
+  - [critical, 7]
+  - [default,  5]
+  - [colors, 4]
+  - [single,   5]
+  - [low,      1]
+

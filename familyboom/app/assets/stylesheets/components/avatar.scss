@@ -1,0 +1,19 @@
+.avatar {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+
+  img {
+    max-width: 100%;
+    border-radius: 50%;
+  }
+}
+
+.avatar__size_l {
+  width: 140px;
+  height: 140px;
+}

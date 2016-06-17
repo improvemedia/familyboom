@@ -1,0 +1,18 @@
+javascript:
+  (function() {
+    var useSSL = 'https:' == document.location.protocol;
+    var src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+    document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+  })();
+
+javascript:
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/21368465/300x250_ТГБ', [300, 250], 'div-gpt-ad-1453970676193-0').addService(googletag.pubads());
+    googletag.defineSlot('/21368465/300x600_Promo', [300, 600], 'div-gpt-ad-1453970676193-1').addService(googletag.pubads());
+    googletag.defineSlot('/21368465/300x90_Тизер', [300, 90], 'div-gpt-ad-1453970676193-2').addService(googletag.pubads());
+    googletag.defineSlot('/21368465/FB_300х600_right', [300, 600], 'div-gpt-ad-1453970676193-3').addService(googletag.pubads());
+    googletag.defineSlot('/21368465/970x250', [970, 250], 'div-gpt-ad-1453970676193-4').addService(googletag.pubads());
+    googletag.pubads().enableSyncRendering();
+    googletag.enableServices();
+  });

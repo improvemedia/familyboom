@@ -1,0 +1,49 @@
+@import "components/teaser.core";
+
+.teaser-date, .teaser-categories {
+  @extend .article_info_item;
+}
+
+.teaser-info {
+  @extend .article_info;
+}
+
+.teaser-date {
+  @extend .article_date;
+}
+
+.teaser-categories {
+  @extend .article_category;
+}
+
+.teaser-title {
+  @extend .article_title;
+}
+
+.teaser-autor {
+  @extend .article_author;
+  margin: 21px 0 0 0;
+}
+
+#teaser-simple {
+  margin-bottom: 28px;
+}
+
+.teaser-main {
+  height: 500px;
+
+  .teaser-container {
+    opacity: 1 !important;
+  }
+}
+
+.teaser-banner {
+  width: 300px;
+  top: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.teaser-title {
+  font-family: "GothamPro";
+}

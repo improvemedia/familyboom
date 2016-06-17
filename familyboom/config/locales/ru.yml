@@ -1,0 +1,12 @@
+---
+ru:
+  jarvis_mailer:
+    reset_password_text: "Я узнал о том, что вы забыли свой пароль для портала FamilyBoom.ru!<br/>%{link} вы его можете сменить. Осторожнее, больше не забывайте! :)"
+    registration: "Регистрация на FamilyBoom.ru"
+    registration_text: "Вы стали зарегистрированным пользователем портала FamilyBoom.ru!<br/>Впереди Вас ждет много яркого и интересного!"
+    registration_password: "Ваш пароль на сайте: %{password}"
+    show_my_profile: "Вы можете увидеть свой профиль %{link}."
+    edit_profile: "Для редактирования профиля или изменения пароля перейдите на %{link} страницу."
+
+  the_comments:
+    like: ""
